@@ -57,6 +57,11 @@ public class Data {
         if (data.isNull(key)) {
             return null;
         } else {
+            Object object = data.get(key);
+            if (object.getClass().equals(Integer.class)) {
+                Object i = 1;
+                return i.equals(object);
+            }
             return data.getBoolean(key);
         }
     }
